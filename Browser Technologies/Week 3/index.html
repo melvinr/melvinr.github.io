@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Progressive Enhancement</title>
+    <title>Football Results</title>
+<!--    <meta http-equiv="refresh" content="5">-->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -14,39 +15,30 @@
     </header>
 
     <main>
-        <section class="matches">
-            <ul id="results" class="">
-                <li id="leicestertwo">Leicester City: 3 vs Manchester City: 1</li>
-                <li>manci:1 vs manu:1</li>
-            </ul>
-        </section>
-
-        <section id="cluboption" class="inactive">
+        <section id="cluboption" class="">
             <article>
-                <button id="leicester" class="clubButton" data-result="4-1" data-match="Leicester City vs Manchester United">Leicester City</button>
+                <a id="leicester" href="leicester_result.html" class="clubButton" role="button" data-match="Leicester City vs Westham United">Leicester City</a>
             </article>
             <article>
-                <button id="manu" class="clubButton" data-result="4-1" data-match="Leicester City vs Manchester United">Manchester United</button>
+                <a id="manu" href="manu_result.html" class="clubButton" role="button" data-match="Manchester United vs Aston Villa">Manchester United</a>
             </article>
             <article>
-                <button id="manci" class="clubButton" data-result="2-1" data-match="Manchester City vs Crystal Palace">Manchester City</button>
+                <a id="manci" href="manci_result.html" class="clubButton" role="button" data-match="Manchester City vs Everton">Manchester City</a>
             </article>
             <article>
-                <button id="cryspa" class="clubButton" data-result="2-1" data-match="Manchester City vs Crystal Palace">Crystal Palace</button>
+                <a id="cryspa" href="cryspa_result.html" class="clubButton" role="button" data-match="Crystal Palace vs Tottenham Hotspur">Crystal Palace</a>
             </article>
         </section>
 
+<!--
         <section id="push-notification" class="inactive">
             <img src="http://i.ebayimg.com/00/s/ODg2WDg4Ng==/z/X-8AAOxyNmZTj3tF/$_35.JPG">
             <h2 id="notification-title"></h2>
             <p id="notification-content">Score: </p>
-            <button id="confirm">Done</button>
+            <a id="confirm">Done</a>
         </section>
+-->
     </main>
-
-    <footer>
-
-    </footer>
 
     <script src="js/script.js"></script>
 

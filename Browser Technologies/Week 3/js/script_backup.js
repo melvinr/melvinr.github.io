@@ -9,21 +9,31 @@ var leicesterTwo = document.getElementById('leicestertwo');
 var docBody = document.querySelector('body');
 var notifTitle = document.getElementById('notification-title');
 var notifContent = document.getElementById('notification-content');
-var docBody = document.querySelector('body');
-var myTitle = document.querySelector('title');
+
 
 document.addEventListener('DOMContentLoaded', function () {
+    results.classList.add('inactive');
+    cluboption.classList.remove('inactive');
 
     if (isNewNotificationSupported()) {
         docBody.classList.add('nf-supported');
-        if (Notification.permission == 'granted') {
-//            fn.notification.webNotification();
-        }
+    }
+    fn.launcher.init();
+
+});
+
+fn.launcher = (function () {
+    var clubButton = document.querySelectorAll('.clubButton');
+    var init = function () {
+
+        fn.loop.loopFunc();
     }
 
-    //    fn.launcher.init();
-    fn.loop.loopFunc();
-});
+    return {
+        init: init
+    }
+})();
+
 
 fn.loop = (function () {
     var clubButton = document.querySelectorAll('.clubButton');
@@ -31,18 +41,16 @@ fn.loop = (function () {
 
     function loopFunc() {
 
-
         var pushNotification = document.getElementById('push-notification');
         cluboption.addEventListener('click', function (e) {
-            //            var result = e.target.attributes['data-result'].value;
+            var result = e.target.attributes['data-result'].value;
             var matchup = e.target.attributes['data-match'].value;
-            if (docBody.className === 'nf-supported') {
-                e.preventDefault();
-                fn.notification.webNotification(matchup);
-
-                //                fn.notification.testNotification(result, matchup);
-                Notification.requestPermission();
-                console.log(matchup);
+            if (docBody.className !== 'nf-supported') {
+                pushNotification.classList.remove('inactive');
+                fn.notification.showSection(result, matchup);
+            } else {
+                fn.notification.webNotification(result, matchup);
+                console.log('Melvin');
             }
         })
 
@@ -60,39 +68,40 @@ fn.notification = (function () {
 
     };
 
-    function webNotification(matchup) {
+    function webNotification(result, matchup) {
         if (window.Notification && Notification.permission == 'granted') {
-            setTimeout(function () {
-                var result = fn.getResult.getRandomResult();
-                myTitle.innerHTML = result;
-                var notification = new Notification(matchup, {
-                    icon: 'http://i.ebayimg.com/00/s/ODg2WDg4Ng==/z/X-8AAOxyNmZTj3tF/$_35.JPG',
-                    body: result
-                })
-            }, 10000);
+            console.log(notifContent);
+            var notification = new Notification(matchup, {
+                icon: 'http://i.ebayimg.com/00/s/ODg2WDg4Ng==/z/X-8AAOxyNmZTj3tF/$_35.JPG',
+                body: result
+            });
         } else if (isNewNotificationSupported()) {
             Notification.requestPermission();
         }
     }
 
-
-    function testNotification(matchup, result) {
-
-    }
-
     return {
         showSection: showSection,
-        webNotification: webNotification,
-        testNotification: testNotification
+        webNotification: webNotification
     }
+
 })();
+
+function checkButton() {
+    var pushNotification = document.getElementById('push-notification');
+    var closeButton = document.getElementById('confirm');
+    closeButton.addEventListener('click', function () {
+        pushNotification.classList.add('inactive');
+    })
+}
+
+checkButton();
 
 //Thanks to Joost Faber for helping me rewrite this for progressive enhancement.
 //Source: https://developers.google.com/web/updates/2015/05/notifying-you-of-changes-to-notifications
 function isNewNotificationSupported() {
     var docBody = document.querySelector('body');
     if (!window.Notification || !Notification.requestPermission) {
-        console.log('hoi');
         return false;
     }
 
@@ -104,32 +113,9 @@ function isNewNotificationSupported() {
         new Notification('...');
     } catch (e) {
         if (e.name == 'TypeError')
-        //            fn.loop.loopFunc();
-            console.log('nope');
+            fn.loop.loopFunc();
         return false;
     }
 
     return true;
 }
-
-
-
-
-
-///This has to be deleted, this was from another application
-fn.getResult = (function () {
-    function getRandomResult() {
-        function myFunction() {
-            return Math.floor(Math.random() * 6);
-        }
-        var homeSide = myFunction();
-        var awaySide = myFunction();
-
-        var endResult = homeSide + '-' + awaySide;
-        return endResult;
-    }
-
-    return {
-        getRandomResult: getRandomResult
-    }
-})();

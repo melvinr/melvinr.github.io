@@ -14,12 +14,22 @@ main {
     justify-content: center;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+}
+
 article {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 1em;
+/*    margin-top: 0.3em;*/
 }
 
 header {
@@ -33,25 +43,34 @@ h1 {
     padding: 0.3em
 }
 
-button {
+[role=button]{
     margin: auto;
-    width: 80%;
-    height: 4em;
-    background: #259b24;
-    margin-bottom: 0.5em;
+    width: 100%;
+    background: #18a556;
+    text-align: center;
+    line-height: 4em;
+    font-size: 1.1em;
+    text-decoration: none;
+/*    margin-bottom: 0.5em;*/
     color: #fff;
-    font-size: 1em;
     border: none;
-    border-radius: 5em;
+    border-bottom: 1px solid lightgrey;
+/*    border-radius: 1em;*/
      box-shadow: 0 4px 4px -2px #232323;
     -moz-box-shadow: 0 4px 4px -2px #232323;
     -webkit-box-shadow: 0 2px 4px -2px #232323;
 }
 
-button:active {
+[role=button]:hover {
+/*    font-size: 1.2em;*/
+    background: #1BB65F;
+}
+
+[role=button]:active {
     -webkit-transform: scale(0.95);
     transform: scale(0.95);
-    background: #379B2F;
+    background: #1BB65F;
+
 }
 
 #cluboption {
