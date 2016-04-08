@@ -14,8 +14,8 @@ int val = 0;
 
 
 //Define client, use your wifi or hotspot's SSID and password
-const char* ssid = "MR";
-const char* password = "159753!!";
+const char* ssid = "";
+const char* password = "";
 WiFiClient client;
 
 //Keys for EIoTCloudRestApi
