@@ -229,4 +229,5 @@ body {
     float: right;
     clear: both;
     margin-bottom: 5px;
-    pointer
+    pointer-events: auto;
+}
