@@ -31,7 +31,7 @@ The API is utilized by more than 10.000 developers, with over 500 million API ca
 Describe what your application should do and which aspects will be reactive.
 
 ###Create fitness recipes
-The application will allow users to create recipes with data from The FatSecret Platform API, which contains foods and its corresponding nutritional values. Whilst adding foods to the recipe, the most important nutritional values will be added and shown. When recipes have been created they are added to the homepage which contains a live feed of newly created recipes.
+The application will allow users to create recipes for fitness purposes. When creating a recipe, it will be important to specify the diet type it is meant for. The three options will be: bulking, cutting and maintaining. When recipes have been created they are added to the homepage which contains a live feed of newly created recipes.
 
 ####Target Audience
 FitnessByte's target audience will be people who exercise and have a certain nutrition and/or weight goal. For example, are the recipes meant for 'cutting' or 'bulking'. But of course, the application can also be useful to people who just need some inspiration for dinner.
@@ -45,6 +45,7 @@ FitnessByte's target audience will be people who exercise and have a certain nut
 - Keeping track of your fitness goals.
 - Creating a group recipe with friends/training partners. Perhaps you want to eat rice, but don't know what else you want to add to your recipe. Let your friends add ingredients for you.
 - Add feedback when a certain nutritional value is excessively present in a recipe.
+- Add a nutrition API to show an ingredient's corresponding nutritional values.
 
 ####Reactive components
 - When a recipe has been created it will be added to the live feed on the homepage.
