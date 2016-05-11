@@ -15,7 +15,9 @@ To build a demo for this use case, I followed the principle of **progressive enh
 Then I started by adding some CSS to enhance the website and give it a more pleasant look. After this I started working on its enhanced feature: notifications. Because the notifications API is not well supported on mobile devices, the application starts out by checking whether or not it's supported. Then it will continue by checking the html pages that would come next in the http-equiv's refresh. From these pages, it will grab the score and render this in the index.html, as well as create a notification.
 
 Screenshot of the live score
+
  ![LiveScore](readme-images/score.png)
 
 Screenshot of a notification
+
  ![LiveScore](readme-images/notification.png)
