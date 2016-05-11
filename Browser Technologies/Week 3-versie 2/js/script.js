@@ -55,7 +55,7 @@ function nextPage() {
 
 setTimeout(function() {
     nextPage();
-}, 5000);
+}, 3000);
 
 
 function newScore(scoreNow) {
@@ -64,20 +64,20 @@ function newScore(scoreNow) {
     if (nextUrl !== null) {
         setTimeout(function() {
             nextPage();
-        }, 5000);
+        }, 3000);
     }
     score.innerHTML = scoreNow[0].textContent;
     scoreNotification(scoreNow[0]);
 }
 
-
 function scoreNotification(scoreNow) {
     var todayMatchup = matchup.getAttribute('data-match');
+    var scoreValue = scoreNow.innerHTML;
 
     if (newNotification == true) {
         new Notification(todayMatchup, {
             icon: 'images/leicester.png',
-            body: scoreNow.innerHTML
+            body: scoreValue
         });
     } else {
         console.log('no support');
