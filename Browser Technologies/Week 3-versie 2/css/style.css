@@ -15,16 +15,12 @@ ul {
 }
 
 li {
-    font-size: 1.2em;
-    margin-top: 0.5em;
+    font-size: 1em;
 }
 
 section {
-    /*    padding: 1em;*/
     background: white;
     width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 1em;
     box-shadow: 0 4px 4px -2px #232323;
 }
 
@@ -67,16 +63,13 @@ h2 {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
 }
 
 
 .club-logo {
     width: 3em;
     height: 3em;
+    margin: auto;
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -86,11 +79,6 @@ h2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
   margin: auto;
 }
 
