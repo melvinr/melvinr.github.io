@@ -4,7 +4,6 @@ var matchup = document.getElementById('matchup'),
 
 if (isNewNotificationSupported()) {
     if (Notification.permission === 'granted') {
-        console.log('jup');
         newNotification = true;
 
     } else if (Notification.permission == 'denied') {
@@ -16,7 +15,7 @@ if (isNewNotificationSupported()) {
                 console.log('I have asked, got accepted');
             } else if (Notification.permission === 'denied') {
                 newNotification = false;
-                console.log('no support');
+                console.log('no support for notifications');
             }
         });
     }
@@ -80,6 +79,6 @@ function scoreNotification(scoreNow) {
             body: scoreValue
         });
     } else {
-        console.log('no support');
+        console.log('no support for notifications');
     }
 };
