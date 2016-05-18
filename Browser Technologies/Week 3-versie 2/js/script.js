@@ -1,6 +1,7 @@
 var matchup = document.getElementById('matchup'),
     score = document.getElementById('score'),
-    nextUrl = score.getAttribute('data-to-page');
+    nextUrl = score.getAttribute('data-to-page'),
+    newNotification = false;
 
 if (isNewNotificationSupported()) {
     if (Notification.permission === 'granted') {
